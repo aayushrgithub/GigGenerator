@@ -63,7 +63,7 @@ jobs:
           with:
             token: ${{secrets.TOKEN}}
 
-        - name: update the tag
+        - name: update tag
           run: |
            sed -i 's/image: .*/image: "${{secrets.DOCKERHUB_USERNAME}}/react-app:${{github.run_id}}"/' K8s manifests/deployment.yaml 
         
