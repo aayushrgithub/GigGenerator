@@ -18,7 +18,7 @@ jobs:
            sudo apt install -y nodejs
 
         - name: Build the coded
-          run: npm run build
+          run: npm install && npm run build
     
     push:
         runs-on: ubuntu-latest
