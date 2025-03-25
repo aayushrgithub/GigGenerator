@@ -65,7 +65,7 @@ jobs:
 
         - name: update tag
           run: |
-           sed -i 's/image: .*/image: "${{secrets.DOCKERHUB_USERNAME}}/react-app:${{github.run_id}}"/' K8s manifests/deployment.yaml 
+           sed -i 's|image: .*|image: "${{secrets.DOCKERHUB_USERNAME}}/react-app:${{github.run_id}}"|' K8s manifests/deployment.yaml 
         
         - name: Commit and push changes
           run: |
