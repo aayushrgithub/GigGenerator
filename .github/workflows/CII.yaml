@@ -65,12 +65,12 @@ jobs:
 
         - name: update tag
           run: |
-           sed -i 's|image: .*|image: "${{secrets.DOCKERHUB_USERNAME}}/react-app:${{github.run_id}}"|' K8s manifests/deployment.yaml 
+           sed -i 's|image: .*|image: "${{secrets.DOCKERHUB_USERNAME}}/react-app:${{github.run_id}}"|' 'K8s manifests'/deployment.yaml 
         
         - name: Commit and push changes
           run: |
            git config --global user.email "aayushrathi47@gmail.com"
            git config --global user.name "Aayush Rathi" 
-           git add K8s manifests/deployment.yaml
+           git add 'K8s manifests'/deployment.yaml
            git commit -m "Updated the image in K8s manifests"
            git push origin HEAD:main -f
