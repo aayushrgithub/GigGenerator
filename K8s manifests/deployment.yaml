@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: gifgenerator
-          image: "aayushrgithub/react-app:14071937488"
+          image: "aayushrgithub/react-app:14072282353"
           ports:
             - containerPort: 80
