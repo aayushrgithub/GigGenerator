@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gifgenerator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gifgenerator
+  template:
+    metadata:
+      labels:
+        app: gifgenerator
+    spec:
+      containers:
+        - name: gifgenerator
+          image: aayushrgithub/react-app:latest
+          ports:
+            - containerPort: 80
